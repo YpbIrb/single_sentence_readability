@@ -1,0 +1,5 @@
+data/texts/year_bog_08.txt 8
+data/texts/year_bog_09.txt 9
+data/texts/year_bog_10.txt 10
+data/texts/year_bog_10p.txt 10
+data/texts/year_bog_11p.txt 11

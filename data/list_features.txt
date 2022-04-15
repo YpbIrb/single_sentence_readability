@@ -1,0 +1,14 @@
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_bog_06_doc_features
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_bog_07_doc_features
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_bog_08_doc_features
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_bog_09_doc_features
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_bog_10_doc_features
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_bog_10p_doc_features
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_bog_11p_doc_features
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_nik_05_doc_features
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_nik_06_doc_features
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_nik_07_doc_features
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_nik_08_doc_features
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_nik_09_doc_features
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_nik_10_doc_features
+C:\Users\YpbIrb\PycharmProjects\sing_sent_readability\data\features_dfs\year_nik_11_doc_features
