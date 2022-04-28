@@ -1,0 +1,4 @@
+data/preprocessed/year_nik_08_preprocessed 8
+data/preprocessed/year_nik_09_preprocessed 9
+data/preprocessed/year_nik_10_preprocessed 10
+data/preprocessed/year_nik_11_preprocessed 11

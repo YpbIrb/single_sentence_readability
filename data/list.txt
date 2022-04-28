@@ -1,5 +1,14 @@
-data/texts/year_bog_08.txt 8
-data/texts/year_bog_09.txt 9
-data/texts/year_bog_10.txt 10
-data/texts/year_bog_10p.txt 10
-data/texts/year_bog_11p.txt 11
+data/texts/year_bog_06.txt
+data/texts/year_bog_07.txt
+data/texts/year_bog_08.txt
+data/texts/year_bog_09.txt
+data/texts/year_bog_10.txt
+data/texts/year_bog_10p.txt
+data/texts/year_bog_11p.txt
+data/texts/year_nik_05.txt
+data/texts/year_nik_06.txt
+data/texts/year_nik_07.txt
+data/texts/year_nik_08.txt
+data/texts/year_nik_09.txt
+data/texts/year_nik_10.txt
+data/texts/year_nik_11.tx

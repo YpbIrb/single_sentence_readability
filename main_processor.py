@@ -109,6 +109,30 @@ class MainProcessor:
         
         return features
         
+        
+    def test(self, listpath):
+        path_dict = {}
+        with open(listpath) as f:
+            for line in f:
+                key, val = line.split()
+                path_dict[str(key)] = int(val)
+        
+        res = 0
+        for i in path_dict:
+            print(i)
+            doc = Doc(Vocab()).from_disk(i)
+            for sent in doc.sents:
+                curr__counter = 0
+                for token in sent:
+                    if(token.dep_ == ""):
+                        curr__counter += 1
+                if (curr__counter > 1):
+                    res += 1
 
+        print (res)      
+        return
+      
+
+    
 if __name__ == '__main__':
     print("Hello")

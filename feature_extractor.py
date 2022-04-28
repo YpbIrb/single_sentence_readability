@@ -27,7 +27,11 @@ class FeatureExtractor:
     #информация после превращения флоатов в инты. Текущий столбец, с которого начинается превращение - 10
     def get_sentence_features(self, sentence):
         res = dict()
-        res["Valid"] = 1
+        if (self._check_valid(sentence) == True):
+            res["Valid"] = 1
+        else:
+            res["Valid"] = 0
+        res.update(self._get_flesh_score(sentence))
         res.update(self._get_tree_depth(sentence))
         res.update(self._get_sent_length(sentence))
         res.update(self._get_mean_distance(sentence))
@@ -36,8 +40,34 @@ class FeatureExtractor:
         res.update(self._get_punct_num(sentence))
         res.update(self._get_tags_count(sentence))
         res.update(self._get_dependencies_count(sentence))
+        
+        
         return res
 
+    def _get_flesh_score(self, sentence):
+        res = dict()
+        
+        asl = 0
+        words_count = 0
+        total_syllables = 0
+        vovels = ['а','е','ё','и','о','у','э','ю','я','ы']
+        for token in sentence:
+            if token.tag_ != "_SP" and token.tag_ != "PUNCT":
+                asl += 1
+                words_count += 1
+                
+                for letter in token.text.lower():
+                    if letter in vovels:
+                        total_syllables += 1
+        if (words_count == 0):
+            res["Flesh"] = 0
+            res["Valid"] = 0
+        else:           
+            asw = total_syllables / words_count
+            res["Flesh"] = 206.835 - 1.52 * asl - 65.14 * asw
+        return res
+    
+    
     # Расчет глубины дерева
     # Done
     def _get_tree_depth(self, sentence):
@@ -58,7 +88,10 @@ class FeatureExtractor:
         for token in sentence:
             if token.tag_ != "_SP" and token.tag_ != "PUNCT":
                 res["sent_length"] += 1
-           
+        
+        if(res["sent_length"] <= 3):
+            res["Valid"] = 0
+        
         return res
         
     # Расчет количества вершин с определенным количеством потомков(без учета "корня" как вершины с 1 ребенком)
@@ -154,9 +187,27 @@ class FeatureExtractor:
     def _get_dependencies_count(sentence):
         res = dict()
         for token in sentence:
-            if token.dep_ != "_SP" and token.dep_ != "root" and token.dep_ != "punct":
+            if token.dep_ != "" and token.dep_ != "root" and token.dep_ != "punct":
                 res["dep_" + token.dep_ + "_num"] = res.get("dep_" + token.dep_ + "_num", 0) + 1
 
         return res
 
-    
+    @staticmethod
+    def _check_valid(sentence):
+        
+        if(sentence[0].text[0].islower()):
+            return False
+        
+        if(len(sentence) > 3):
+            if(len(sentence[len(sentence)-3].text) == 1 and (sentence[len(sentence)-3].text[0].isupper() or sentence[len(sentence)-3].text[0] == "т") ):
+                return False
+        
+        curr_length = 0
+        for token in sentence:
+            if token.tag_ != "_SP" and token.tag_ != "PUNCT":
+                curr_length += 1
+                
+        if (curr_length <= 3):
+            return False
+                
+        return True
